@@ -1,0 +1,11 @@
+{
+    "applications": {
+        "_default": {
+            "link": "teamathon-two"
+        }, 
+        "teamathon-two": {
+            "applicationId": "IWOnIOnfoZ9bVVxotiygJWUb12Tv6Bj2OCrYs8wI", 
+            "masterKey": "aWHX1nMUhpT1nt7XHXludjT89VvbS1MuNGFjK3Zg"
+        }
+    }
+}
