@@ -1,0 +1,52 @@
+@charset "UTF-8";
+@import "variables.less";
+
+body{
+    margin: 0px;
+    font-family: @primary-font;
+    color: @text-color;
+    font-size: 13px;
+    padding: 33px 0 0;
+}
+a, .text-blue, .text-link, a:visited, .link {
+  color: @blue;
+  text-decoration: none;
+  outline: none !important;
+  cursor: pointer;
+}
+a:hover, .link:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+h1,h2,h3,h4{
+  margin: 0px;
+  padding: 0px;
+  font-family: secondary, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+p{
+  margin: 5px 0;
+}
+label{
+  cursor: pointer;
+  display: block;
+}
+
+ul{
+  margin: 0px;
+  padding: 0px;
+
+  li{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    display: inline-block;
+  }
+}//end ul
+#content {
+  margin: 20px auto 0;
+  padding: 0 12px;
+  width: 1024px;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+}
