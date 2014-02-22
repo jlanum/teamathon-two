@@ -2,6 +2,9 @@ SporkitServiceModule.service('Facebook', function($rootScope) {
     var Food = Parse.Object.extend("Trip");
     var foodQuery = new Parse.Query(Food);
 
+    var ParseUser = Parse.Object.extend("User");
+    var parseUserQuery = new Parse.Query(ParseUser);
+
     var createResponse = function(id, response) {
         if (response) {
             $rootScope.$broadcast(id + '-onsuccess', response);
@@ -31,6 +34,11 @@ SporkitServiceModule.service('Facebook', function($rootScope) {
             foodQuery.include("createdBy");
             foodQuery.find(function(response) {
                 createResponse('get-all-foods', response);
+            });
+        },
+        getAllParseUsers : function(user) {
+            parseUserQuery.find(function(response) {
+                createResponse('get-all-parseusers', response);
             });
         },
         getLoginStatus : function() {
