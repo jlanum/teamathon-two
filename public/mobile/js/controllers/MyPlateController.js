@@ -29,6 +29,7 @@ function($scope, Facebook) {
         }
     });
 
+    $scope.getAllParseUsers();
 
     $scope.getAllParseUsers = function(){
         Facebook.getAllParseUsers();
