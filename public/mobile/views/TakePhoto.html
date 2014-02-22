@@ -1,0 +1,103 @@
+<script>
+    $("button.add-price").click(function() {
+        $("div.price-input").toggle();
+        $('button.add-price').hide();
+    });
+    $("button.add-loc-type").click(function() {
+        $("div.loc-type-input").toggle();
+        $('button.add-loc-type').hide();
+    }); 
+</script>
+<div ng-controller="TakePhotoController">
+
+    <div class="row">
+        <div class="col-sm-6 col-md-3 upload">
+            <input type="image" src="assets/thumb-default.png" id="imagePreviewer" class="img-thumbnail img-responsive" />
+            <label class="btn-upload btn btn-default"> Choose your food photo... <span>
+                    <input type="file" id="profilePhotoFileUpload"
+                    onchange="angular.element(this).scope().previewImage(); angular.element(this).scope().$digest();"
+                     name="img-upload" />
+                </span> </label>
+        </div>
+
+        <div class="col-md-6">
+            <form role="form" class="form-upload">
+                <div class="form-group">
+                    <label for="dish-name">Dish Name</label>
+                    <input type="text" class="form-control" ng-model="food.name" placeholder="e.g. Pad Thai, Salmon Sashimi"/>
+                </div>
+                <div class="form-group">
+                    <label for="loc-name">Location</label>
+                    <input id="restaurantInput" type="text" class="form-control" ng-change="callYelpForMatchingRestaurants()" auto-complete ui-items="nearByRestaurantNames" ng-model="selectedRestaurantName" placeholder="e.g. Name of the restaurant"/>
+                </div>
+                <div class="form-group">
+                    <label for="description">How was this dish?</label>
+                    <textarea class="form-control" rows="5" placeholder="You can describe this dish using hashtags e.g. #delicious #yummy"></textarea>
+                </div>
+
+                <button class="btn btn-default add-price">
+                    Add Price
+                </button>
+
+                <div class="price-input col-md-4">
+                    <label for="price">How much is this dish?</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">$</span>
+                        <input type="text" class="form-control" placeholder="00.00" />
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-caret-down fa-fw"></i>
+                            </button>
+                            <ul class="dropdown-menu pull-right">
+                                <li>
+                                    <a href="#">I cooked this dish!</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn btn-default add-loc-type">
+                    Add Location Type
+                </button>
+
+                <div class="loc-type-input col-md-6">
+                    <label for="loc">Type of the food provider</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="" />
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-caret-down fa-fw"></i>
+                            </button>
+                            <ul class="dropdown-menu pull-right">
+                                <li>
+                                    <a href="#">Restaurant</a>
+                                </li>
+                                <li>
+                                    <a href="#">Street Vendor</a>
+                                </li>
+                                <li>
+                                    <a href="#">Food Truck</a>
+                                </li>
+                                <li>
+                                    <a href="#">Hotel</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="#">Add New...</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+                <button class="btn btn-primary" ng-click="saveFood()">
+                    Share
+                </button>
+        </div>
+
+        </fieldset>
+        </form>
+
+    </div><!--row-->
+</div>

@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, target-densityDpi=device-dpi" />
         <!-- Bootstrap -->
-        <link href="mobile/css/screen.css" rel="stylesheet" media="screen">
-        <link href="mobile/js/libs/dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="css/mobile.css" rel="stylesheet" media="screen">
+        <link href="js/libs/dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
         <link href='http://fonts.googleapis.com/css?family=Raleway:100,300,500,700,800' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
-        <link href="mobile/css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/fontcustom/fontcustom.css" rel="stylesheet">
         <link href="http://code.jquery.com/ui/1.10.3/themes/flick/jquery-ui.css" rel="stylesheet" />
 
         <script type="text/javascript" src="http://oauth.googlecode.com/svn/code/javascript/oauth.js"></script>
@@ -16,21 +18,21 @@
         <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
         <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
         <script src="http://timeago.yarp.com/jquery.timeago.js"></script>
-        <script src="mobile/js/libs/dist/js/bootstrap.min.js"></script>
+        <script src="js/libs/dist/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="http://code.angularjs.org/1.1.1/angular.js"></script>
         <script type="text/javascript" src="http://code.angularjs.org/1.1.1/angular-resource.js"></script>
         <script type="text/javascript" src="http://code.angularjs.org/1.1.1/angular-sanitize.js"></script>
         <script type="text/javascript" src="https://www.parsecdn.com/js/parse-1.2.9.min.js"></script>
-        <script type="text/javascript" src="mobile/js/app.js"></script>
-        <script type="text/javascript" src="mobile/js/directives/autocomplete.js"></script>
-        <script type="text/javascript" src="mobile/js/utils.js"></script>
-        <script type="text/javascript" src="mobile/js/services.js"></script>
-        <script type="text/javascript" src="mobile/js/ctrl.js"></script>
-        <script type="text/javascript" src="mobile/js/controllers/TopHeaderController.js"></script>
-        <script type="text/javascript" src="mobile/js/controllers/MyPlateController.js"></script>
-        <script type="text/javascript" src="mobile/js/controllers/SearchController.js"></script>
-        <script type="text/javascript" src="mobile/js/controllers/TakePhotoController.js"></script>
-        <script type="text/javascript" src="mobile/js/controllers/ProfileController.js"></script>
+        <script type="text/javascript" src="mobile_app.js"></script>
+        <script type="text/javascript" src="js/directives/autocomplete.js"></script>
+        <script type="text/javascript" src="js/utils.js"></script>
+        <script type="text/javascript" src="js/services.js"></script>
+        <script type="text/javascript" src="js/ctrl.js"></script>
+        <script type="text/javascript" src="js/controllers/TopHeaderController.js"></script>
+        <script type="text/javascript" src="js/controllers/MyPlateController.js"></script>
+        <script type="text/javascript" src="js/controllers/SearchController.js"></script>
+        <script type="text/javascript" src="js/controllers/TakePhotoController.js"></script>
+        <script type="text/javascript" src="js/controllers/ProfileController.js"></script>
         <title>Spork.it</title>
 
     </head>
@@ -40,13 +42,8 @@
             <div ng-include src="'views/LoginView.html'" ng-hide="isLoggedIn"></div>
             <div ng-include src="'views/HomeView.html'" ng-show="isLoggedIn"></div>
             <div ng-view class="container main-content" ng-show="isLoggedIn"></div>
+            <div ng-include src="'views/toolbar.html'" ng-show="isLoggedIn"></div>
         </div><!--wrap-->
-        <div id="footer">
-            <div class="container">
-                <p class="credit">
-                    &copy; 2013 Spork.it All Rights Reserved.
-                </p>
-            </div>
-        </div>
     </body>
 </html>
+

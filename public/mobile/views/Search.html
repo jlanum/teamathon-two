@@ -1,0 +1,21 @@
+<div ng-controller="SearchController">
+	<div class="col-md-6 hunt-bar pull-right">
+		<div class="input-group input-group-lg pull-right">
+			<input class="form-control" type="text" placeholder="Hunt for your cravings..." value="{{currentLocationAddress}}">
+			<span class="input-group-btn">
+				<button class="btn btn-warning" type="button">
+					<i class="fa fa-crosshairs fa-lg"></i>
+				</button> 
+			</span>
+		</div><!--/input-->
+	</div><!--/col-->
+	<div id="mapholder">
+		<div ng-show="isLoading" class="spinner">
+			<img src="assets/loader.gif" /><br/>
+			Loading meals nearby...
+		</div>
+	</div>
+	<ul>
+	    <li ng-repeat="restaurant in nearByRestaurants.businesses">{{restaurant.name}}</li>
+	</ul>
+</div>
