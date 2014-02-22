@@ -1,5 +1,5 @@
 SporkitServiceModule.service('Facebook', function($rootScope) {
-    var Food = Parse.Object.extend("Food");
+    var Food = Parse.Object.extend("Trip");
     var foodQuery = new Parse.Query(Food);
 
     var createResponse = function(id, response) {

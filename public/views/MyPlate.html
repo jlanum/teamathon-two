@@ -5,7 +5,7 @@
             <a href="#mapview" data-toggle="tab" class="btn btn-default"> <i class="fa fa-map-marker"></i> Map View </a>
         </div>
         <div class="input-group">
-            <input class="form-control" type="text" placeholder="Hunt for your cravings..." value="{{currentLocationAddress}}">
+            <input class="form-control" type="text" placeholder="Search keyword..." value="{{currentLocationAddress}}">
             <span class="input-group-btn">
                 <button class="btn btn-warning" type="button">
                     <i class="fa fa-crosshairs fa-lg"></i>
@@ -19,36 +19,68 @@
         <div ng-repeat="food in foods" class="row-fluid tab-pane active" id="listview">
             <div class="col-md-4">
                 <div class="thumbnail">
-                    <small class="pull-right time-stamp"><i class="fa fa-clock-o fa-fw"></i>{{getFoodTime(food.createdAt)}}</small>
-                    <h4><i class="fa fa-cutlery"></i>Zak ate...</h4>
-                    <h4 class="dish-name">{{food.attributes.name}}</h4>
-                    <h5><i class="fa fa-map-marker"></i><a href="#">{{food.attributes.restaurant.name}}</a></h5>
+                    <small class="pull-right time-stamp"><i class="fa fa-clock-o fa-fw"></i>Booked {{getFoodTime(food.createdAt)}}</small>
+                    <h4><i class="fa fa-cutlery"></i>Trip to {{food.attributes.itineraryObj.HotelItineraryResponse.Itinerary.HotelConfirmation.Hotel.city}}</h4>
+                    <h4 class="dish-name">{{food.attributes.itineraryObj.HotelItineraryResponse.Itinerary.HotelConfirmation.Hotel.name}}</h4>
+                    <h5><i class="fa fa-map-marker"></i><a href="#">
+                        {{food.attributes.itineraryObj.HotelItineraryResponse.Itinerary.HotelConfirmation.Hotel.address1}}
+                    </a></h5>
                     <address>
                         {{food.attributes.restaurant.location.display_address[1]}}
                     </address>
                     <img src="{{food.attributes.photo._url}}" class="food-photo" />
-                    <a href="" class="pull-right badge badge-warning" ng-click="sporkTheFood(food)"><i class="icon-spork-half"></i> Sporkit </a>
-
+                    <a href="#chatModal" class="pull-right badge badge-warning" data-toggle="modal"><i class="icon-spork-half"></i> Plan a Happy Accident </a>
                     <hr class="clear" />
                 </div><!--/thumbnail-->
             </div><!--/col-->
         </div><!--/row-->
 
-        <div class="tab-pane" id="mapview">
+        <!--div class="tab-pane" id="mapview">
             <div ng-controller="SearchController">
                 <div id="mapholder">
                     <div ng-show="isLoading" class="spinner">
                         <i class="fa fa-refresh fa-spin fa-lg"></i>
                     </div>
                 </div>
-                <!--ul>
-                    <li ng-repeat="restaurant in nearByRestaurants.businesses">
-                        {{restaurant.name}}
-                    </li>
-                </ul-->
+            </div>
+        </div> -->
+    </div><!--/tab-content-->
+
+<div class="modal fade modal-wide" id="chatModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Chat</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <label>Message:</label>
+                        <input placeholder="What's on your mind?" type="text" name="text" ng-model="message.text"/>
+                        <button type="submit" ng-click="publish()" class="btn btn-primary">
+                            Send
+                        </button>
+                    </form>
+                    <!-- Message List -->
+                    <div id="messages" class="table-striped">
+                        <div class="message" ng-repeat="message in messages" cool-fade>
+                            <div class="avatar-frame">
+                                <img ng-src="http://www.gravatar.com/avatar/{{message.email}}?s=60&r=R&d=https://www.guardly.com/commonassets/images/img_profile_placeholder.png" class="avatar avatar-60 photo" height="60" width="60"/>
+                            </div>
+                            <p class="user">
+                                {{message.username}} said:
+                            </p>
+                            <p class="text">
+                                {{message.text}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div><!--/tab-content-->
+    </div>
 
     <!-- Modal -->
     <div class="modal fade modal-wide" id="recipeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

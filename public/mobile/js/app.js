@@ -2,6 +2,20 @@
 Parse.initialize("IWOnIOnfoZ9bVVxotiygJWUb12Tv6Bj2OCrYs8wI", "H1S0G8171I1BNIDOgrvxP25NbrDdQzSwbI8g8D86");
 
 var SporkitApp = angular.module('SporkitApp', ['SporkitServiceModule', 'SporkitControllerModule', 'SporkitDirectiveModule']);
+
+SporkitApp.directive('coolFade', function() {
+    return {
+      compile: function(elm) {
+        //console.log('compiling');
+        $(elm).css('opacity', 0);
+        return function(scope, elm, attrs) {
+         // console.log('animating');
+          $(elm).animate({ opacity : 1.0 }, 1000 );
+        };
+      }
+    };
+  });
+
 SporkitApp.run(function($rootScope) {
     window.fbAsyncInit = function() {
         //Once the Facebook JavaScript SDK is loaded, initialize FB and Parse.FacebookUtils
