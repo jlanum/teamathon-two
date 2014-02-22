@@ -5,5 +5,46 @@
 // @import "home.less";
 
 #page-welcome{
-   
+   .appstore{
+        background-color: #f6f6f6;
+        border-radius: 18px;
+        padding: 3px 15px;
+        margin: 10px 0 0;
+        display: inline-block;
+        box-shadow: 0 1px 7px #333;
+        
+        &:hover{
+            text-decoration: none;
+        }
+    }
+}
+
+#page-about{
+    img{
+        width: 350px;
+        height: 310px;
+    }    
+    .about-items .about-overlay .trip-info{
+        left: 50%;
+        margin-left: -85px;
+        margin-top: -15px;
+        position: absolute;
+        text-align: center;
+        top: 39%;
+        z-index: 6;
+    }
+    .trip-link{
+        background-color: #fff;
+        border: 1px solid #4E8091;
+        border-radius: 100px;
+        height: 100px;
+        width: 100px;
+        display: inline-block;
+        color: #000;
+        margin-left: 20px;
+        
+        &:first-child{
+            margin: 0px;
+        }
+    }
 }

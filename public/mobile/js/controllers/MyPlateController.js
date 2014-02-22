@@ -29,12 +29,12 @@ function($scope, Facebook) {
         }
     });
 
-    $scope.getAllParseUsers();
+ 
 
     $scope.getAllParseUsers = function(){
         Facebook.getAllParseUsers();
     };
-
+   $scope.getAllParseUsers();
     $scope.getFoodTime = function(d1) {
         return jQuery.timeago(d1);
     };
