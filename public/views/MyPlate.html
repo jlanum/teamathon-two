@@ -27,39 +27,39 @@
             </div>
         </div> -->
     </div><!--/tab-content-->
-
-
-<div ng-repeat="food in foods">
-
-
-<a href="#chatModal" class="pull-right badge badge-warning" data-toggle="modal"><i class="icon-spork-half"></i> Plan a Happy Accident </a>
-
-
 <div class="pages page-about" id="page-about">
-        <div class="container">
-            <header>
-                <h4 class="line-divider">Your Trips</h4>
-                <div class="row">
-            </header>
+    <div class="container">
 
+        <header>
+            <h4 class="line-divider">Your Trips</h4>
+            <p class="smallFontBy08">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua,consectetur adipisicing elit.</p>
+            <div class="row">
+        </header>
+
+        <div ng-repeat="food in foods">
             <article>
+                <ul class="thumbnails about-items my-thumbnails"><div class="about-overlay img-circle"></div></ul>
                 <ul class="thumbnails about-items">
                     <li class="span4 center">
-                         <div class="item">
+                        <div class="item">
                             <img class="img-circle" src="{{food.attributes.photo._url}}" width="250" height="250"  />
+                            <div class="about-overlay img-circle about-extra"></div>
                             <div class="about-overlay img-circle">
                                 <div class="trip-info sicon-white">
                                     <div class="trip-link" ng-repeat="parseuser in parseusers">
-                                        {{parseuser.attributes.fbUserData.first_name}}
+                                        <span>{{parseuser.attributes.fbUserData.first_name}}</span>
+                                        <a href="#chatModal" id="chat-trigger" data-toggle="modal" role="button">
                                         <img class="img-profile" ng-src="http://graph.facebook.com/{{parseuser.attributes.fbUserData.id}}/picture?type=square"/>
-                                        {{parseuser.attributes.fbUserData.bio}}
+                                        </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        
-                        <h5>{{food.attributes.itineraryObj.HotelItineraryResponse.Itinerary.HotelConfirmation.Hotel.city}}<br/>
-                            <small>{{food.attributes.itineraryObj.HotelItineraryResponse.Itinerary.HotelConfirmation.Hotel.name}}<br />March 10th - March 15th</small>
+
+                        <h5>
+                            {{food.attributes.itineraryObj.HotelItineraryResponse.Itinerary.HotelConfirmation.Hotel.city}}
+                            <br/><small>{{food.attributes.itineraryObj.HotelItineraryResponse.Itinerary.HotelConfirmation.Hotel.name}}
+                            <br />March 10th - March 15th</small>
                         </h5>
                     </li> 
                 </ul>
@@ -67,7 +67,6 @@
         </div>
     </div>
 </div>
-
 
 
 <div class="modal fade modal-wide" id="chatModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -83,9 +82,7 @@
                     <form>
                         <label>Message:</label>
                         <input placeholder="What's on your mind?" type="text" name="text" ng-model="message.text"/>
-                        <button type="submit" ng-click="publish()" class="btn btn-primary">
-                            Send
-                        </button>
+                        <button type="submit" ng-click="publish()" class="btn btn-primary">Send</button>
                     </form>
                     <!-- Message List -->
                     <div id="messages" class="table-striped">
@@ -263,3 +260,12 @@
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
 </div><!--ng-controller-->
+
+<script type="text/javascript">
+    
+    // $(document).on('click','#chat-trigger',function(){
+    //     console.log('here');
+
+    //     $('.modal').css('z-index',10401);
+    // });
+</script>

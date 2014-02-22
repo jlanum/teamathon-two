@@ -11,7 +11,6 @@ function($scope, Facebook) {
     };
 
     $scope.$on('get-all-foods-onsuccess', function(event, response) {
-        console.log(response);
         $scope.foods = response;
         if (!$scope.$$phase) {
             $scope.$apply();
@@ -19,7 +18,6 @@ function($scope, Facebook) {
     });
 
     $scope.$on('get-all-parseusers-onsuccess', function(event, response) {
-        console.log(response);
         for (var key in response) {
             console.log(response[key].attributes.name);
         }

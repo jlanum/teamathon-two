@@ -4,6 +4,47 @@
 @import "reset.less";
 // @import "home.less";
 
+body{
+    padding-top: 43px;
+}
+
+#navigation{
+    top: 0px !important;
+    opacity: 1 !important;
+    
+    .center{
+        position: relative;
+        
+       .brand{
+            padding-right: 0px !important;
+            position: relative;
+            margin: 0 0 -5px;
+            
+            &:hover{
+                text-decoration: none;
+            }
+            img{
+                position: absolute;
+                right: -30px;
+                top: 5px;
+            }
+            span{
+                font-family: noteworthy;
+                color: #ccc;
+                font-size: 22px;
+                
+                span{
+                    color: #d94444;
+                }
+            }//end span
+        } //end bran
+    }//end center
+}//end navigaiton
+
+#navigation li.active a:after{
+    border-radius: 4px !important;
+    background-color: #d94444 !important;
+}
 #page-welcome{
    .appstore{
         background-color: #f6f6f6;
@@ -18,33 +59,71 @@
         }
     }
 }
-
+.modal{
+    z-index: -1 !important;    
+}
 #page-about{
-    img{
-        width: 350px;
-        height: 310px;
+    img.img-circle{
+        width: 297px;
+        height: 297px;
+        border: 1px solid #4e808e;
+        padding: 6px;
     }    
+    .about-items {
+        .about-overlay{
+            background-color: transparent; 
+        }
+        .about-overlay.about-extra{
+                background-color: #000 !important;   
+                opacity: .4;
+            }
+       
+        &.my-thumbnails{
+            
+        }
+    }
     .about-items .about-overlay .trip-info{
-        left: 50%;
+        left: 28%;
         margin-left: -85px;
         margin-top: -15px;
         position: absolute;
         text-align: center;
-        top: 39%;
+        top: 28%;
         z-index: 6;
     }
     .trip-link{
-        background-color: #fff;
-        border: 1px solid #4E8091;
+        background-color: #000;
         border-radius: 100px;
-        height: 100px;
-        width: 100px;
+        height: 99px;
+        width: 99px;
         display: inline-block;
         color: #000;
         margin-left: 20px;
+        overflow: hidden;
+        position: relative;
+        box-shadow: 0 1px 4px #333;
+        cursor: pointer;
         
         &:first-child{
             margin: 0px;
+        }
+        span{
+            position: absolute;
+            top: 60%;
+            z-index: 100;
+            left: 0px;
+            width: 100%;
+            text-shadow: 0 0 2px #000;
+            color: #f6f6f6;
+            font-size: 16px;
+        }
+        img{
+            position: absolute; 
+            top: 0px;
+            left:0px;
+            width: 98px;
+            height: 98px;
+            border-radius: 100px;
         }
     }
 }
