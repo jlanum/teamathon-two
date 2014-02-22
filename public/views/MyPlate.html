@@ -16,25 +16,7 @@
     <h1>Meals Feed <span>What people are eating nearby</span></h1>
 
     <div class="tab-content">
-        <div ng-repeat="food in foods" class="row-fluid tab-pane active" id="listview">
-            <div class="col-md-4">
-                <div class="thumbnail">
-                    <small class="pull-right time-stamp"><i class="fa fa-clock-o fa-fw"></i>Booked {{getFoodTime(food.createdAt)}}</small>
-                    <h4><i class="fa fa-cutlery"></i>Trip to {{food.attributes.itineraryObj.HotelItineraryResponse.Itinerary.HotelConfirmation.Hotel.city}}</h4>
-                    <h4 class="dish-name">{{food.attributes.itineraryObj.HotelItineraryResponse.Itinerary.HotelConfirmation.Hotel.name}}</h4>
-                    <h5><i class="fa fa-map-marker"></i><a href="#">
-                        {{food.attributes.itineraryObj.HotelItineraryResponse.Itinerary.HotelConfirmation.Hotel.address1}}
-                    </a></h5>
-                    <address>
-                        {{food.attributes.restaurant.location.display_address[1]}}
-                    </address>
-                    <img src="{{food.attributes.photo._url}}" class="food-photo" />
-                    <a href="#chatModal" class="pull-right badge badge-warning" data-toggle="modal"><i class="icon-spork-half"></i> Plan a Happy Accident </a>
-                    <hr class="clear" />
-                </div><!--/thumbnail-->
-            </div><!--/col-->
-        </div><!--/row-->
-
+        
         <!--div class="tab-pane" id="mapview">
             <div ng-controller="SearchController">
                 <div id="mapholder">
@@ -45,6 +27,26 @@
             </div>
         </div> -->
     </div><!--/tab-content-->
+
+
+<div ng-repeat="food in foods">
+    <div class="col-md-4">
+        <div class="thumbnail">
+            <small class="pull-right time-stamp"><i class="fa fa-clock-o fa-fw"></i>Booked {{getFoodTime(food.createdAt)}}</small>
+            <h4><i class="fa fa-cutlery"></i>Trip to {{food.attributes.itineraryObj.HotelItineraryResponse.Itinerary.HotelConfirmation.Hotel.city}}</h4>
+            <h4 class="dish-name">{{food.attributes.itineraryObj.HotelItineraryResponse.Itinerary.HotelConfirmation.Hotel.name}}</h4>
+            <h5><i class="fa fa-map-marker"></i><a href="#"> {{food.attributes.itineraryObj.HotelItineraryResponse.Itinerary.HotelConfirmation.Hotel.address1}} </a></h5>
+            <address>
+                {{food.attributes.restaurant.location.display_address[1]}}
+            </address>
+            <img src="{{food.attributes.photo._url}}" class="food-photo" />
+            <a href="#chatModal" class="pull-right badge badge-warning" data-toggle="modal"><i class="icon-spork-half"></i> Plan a Happy Accident </a>
+            <hr class="clear" />
+        </div><!--/thumbnail-->
+    </div><!--/col-->
+</div><!--/row-->
+
+
 
 <div class="modal fade modal-wide" id="chatModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
