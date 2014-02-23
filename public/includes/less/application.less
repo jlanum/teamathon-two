@@ -6,7 +6,9 @@
 
 body{
     padding-top: 43px;
+    background: #eee url('../images/pages/welcome/bg.png') 0 0 repeat !important;
 }
+
 #chatModal{
     ul.chats{
         max-height: 300px;
@@ -46,6 +48,40 @@ body{
 #navigation{
     top: 0px !important;
     opacity: 1 !important;
+    background-color: #333 !important;
+    
+    .social-icons{
+        a{
+            opacity: .9;
+            
+            i{
+                background-image: url("../images/css/sicon-set-white.png");
+            }
+            &:hover{
+                opacity: 1;
+            }
+            &.sicon-facebook{
+                background-color:#3b5998;
+            }
+            &.sicon-twitter{
+                background-color:#44cbff;
+            }
+            &.sicon-linkedin{
+                background-color:#1e79c0;
+            }
+            &.sicon-pinterest{
+                background-color:#d90000;
+            }
+            &.sicon-youtube{
+                background-color:#f00;
+            }
+        }
+    }
+    
+    a{
+        color: #f6f6f6 !important;
+        text-shadow: none !important;
+    }
     
     .center{
         position: relative;
@@ -81,6 +117,7 @@ body{
     background-color: #d94444 !important;
 }
 #page-welcome{
+    
    .appstore{
         background-color: #f6f6f6;
         border-radius: 18px;
@@ -96,6 +133,38 @@ body{
 }
 
 #page-about{
+    h4.line-divider{
+        color: #333 !important;
+    }
+    header{
+        p{
+            margin: 0 0 -10px !important;
+            
+            span{
+                color: #d94444;
+            }
+        }
+    }
+    .about-overlay.img-circle h3{
+        font-size: 13px;
+        position: absolute;
+        top: -4px;
+        left: 18%;
+        padding: 0 50px;
+        border-bottom: 1px solid #f6f6f6;
+        height: 41px;
+    }
+    .trip-item{
+        display: inline-block;
+        vertical-align: top;
+        margin-left: 10px;
+        
+        &:first-child,
+        &:last-child{
+            margin: 0px !important;
+        }
+    }
+    
     img.img-circle{
         width: 297px;
         height: 297px;

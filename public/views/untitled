@@ -33,20 +33,19 @@
 
         <header>
             <h4 class="line-divider">Your Trips</h4>
-            <p>Hover over your trips to <span>start a conversation</span> with fellow travelers.</p>
+            <p class="smallFontBy08">Hover over your trips to start a conversation with fellow travelers.</p>
+            <div class="row">
         </header>
 
-        <div class="trip-item" ng-repeat="food in foods">
+        <div ng-repeat="food in foods">
             <article>
                 <ul class="thumbnails about-items my-thumbnails"><div class="about-overlay img-circle"></div></ul>
                 <ul class="thumbnails about-items">
-
-                    <li class="span4 center trip-group">
+                    <li class="span4 center">
                         <div class="item">
                             <img class="img-circle" src="{{food.attributes.photo._url}}" width="250" height="250"  />
                             <div class="about-overlay img-circle about-extra"></div>
                             <div class="about-overlay img-circle">
-                                <h3>Click to contact</h3>
                                 <div class="trip-info sicon-white">
                                     <div class="trip-link" ng-repeat="parseuser in parseusers">
                                         <span>{{parseuser.attributes.fbUserData.first_name}}</span>
@@ -70,38 +69,28 @@
     </div>
 </div>
 
-<style>
-.macys{text-align: center;display: block;}
-.portfolio-items .mix {display:inline-block;opacity:1;}
-.portfolio-items h4 {font-size: 10px !important;}
-.left-space {margin-left: 14%;}
-</style>
-
-<ul class="thumbnails plugin-filter-elements left-space portfolio-items">
-    <div class="trip-link" ng-repeat="shoppingitem in shoppingitems">
-    <li class="span2 mix illustration branding">
-        <a href="#pages/portfolio/project_1.html" data-destination="portfolio-items" data-insert="before">
-            <!-- Portfolio image -->
-            <img src="{{shoppingitem.image[0].imageurl}}">
-            
-            <!-- Portfolio name, activated on hover -->
-            <div class="portfolio-overlay">
-                <h4>{{shoppingitem.summary.name}}</h4>
-            </div>
-        </a>
-    </li>
+<div class="trip-link" ng-repeat="shoppingitem in shoppingitems">
+    {{shoppingitem.summary.name}}
+    {{shoppingitem.summary.price.sale}}
+    <img src="{{shoppingitem.image[0].imageurl}}"/>
 </div>
-</ul>
 
 <div class="modal fade modal-wide" id="chatModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<<<<<<< Updated upstream
+<div class="widget-head">
+=======
     <div class="widget-head">
+>>>>>>> Stashed changes
       <div class="pull-left">Chats</div>
       <div class="widget-icons pull-right">
         <a href="#" class="wclose"><i class="icon-remove"></i></a>
       </div>  
       <div class="clearfix"></div>
     </div>
+<<<<<<< Updated upstream
+=======
 
+>>>>>>> Stashed changes
     <ul class="chats">
       <li class="by-me"  ng-repeat="message in messages" cool-fade>
         <div class="avatar pull-left">
@@ -141,16 +130,15 @@
 
 <script type="text/javascript">
     $(document).on('click','#chat-trigger',function(){
+        var myParent = $(this).parents('li'),
+            theNav = $('#navigation');
 
-        $('.trip-group').css('z-index',1030);
-        $('#navigation').css('z-index',1031);
-
-        $('body').css('overflow','hidden');
+        $(myParent).css('z-index',1030);
+        $(theNav).css('z-index',1031);
     });
 
     $(document).on('click','.icon-remove',function(){
-        $('.modal-backdrop').hide();
-        $('body').css('overflow','visible');
-        $('#navigation').css('z-index',2000);
+        $('.modal-backdrop').fadeOut();
     });
+    
 </script>
