@@ -33,7 +33,7 @@
 
         <header>
             <h4 class="line-divider">Your Trips</h4>
-            <p>Hover over your trips to <span>start a conversation</span> with fellow travelers.</p>
+            <p>Hover over your trips to <span>start a conversation</span> with fellow travelers<br />that are staying at the same location.</p>
         </header>
 
         <div class="trip-item" ng-repeat="food in foods">
@@ -59,9 +59,9 @@
                         </div>
 
                         <h5>
-                            {{food.attributes.itineraryObj.HotelItineraryResponse.Itinerary.HotelConfirmation.Hotel.city}}
+                            {{food.attributes.itineraryObj.HotelItineraryResponse.Itinerary.HotelConfirmation.Hotel.city}}<span>3 Travelers!</span>
                             <br/><small>{{food.attributes.itineraryObj.HotelItineraryResponse.Itinerary.HotelConfirmation.Hotel.name}}
-                            <br />March 10th - March 15th</small>
+                            <br />{{food.attributes.itineraryObj.HotelItineraryResponse.Itinerary.HotelConfirmation.arrivalDate}} - {{food.attributes.itineraryObj.HotelItineraryResponse.Itinerary.HotelConfirmation.departureDate}}</small>
                         </h5>
                     </li> 
                 </ul>
@@ -69,13 +69,6 @@
         </div>
     </div>
 </div>
-
-<style>
-.macys{text-align: center;display: block;}
-.portfolio-items .mix {display:inline-block;opacity:1;}
-.portfolio-items h4 {font-size: 10px !important;}
-.left-space {margin-left: 14%;}
-</style>
 
 <ul class="thumbnails plugin-filter-elements left-space portfolio-items">
     <div class="trip-link" ng-repeat="shoppingitem in shoppingitems">
@@ -108,7 +101,7 @@
           <img ng-src="http://www.gravatar.com/avatar/{{message.email}}?s=60&r=R&d=https://www.guardly.com/commonassets/images/img_profile_placeholder.png" class="avatar avatar-60 photo" height="60" width="60"/>
         </div>
         <div class="chat-content">
-          <div class="chat-meta">{{message.username}} said: <span class="pull-right">3 hours ago</span></div>
+          <div class="chat-meta">{{message.username}} said:</div>
           {{message.text}}
           <div class="clearfix"></div>
         </div>
@@ -141,10 +134,8 @@
 
 <script type="text/javascript">
     $(document).on('click','#chat-trigger',function(){
-
         $('.trip-group').css('z-index',1030);
         $('#navigation').css('z-index',1031);
-
         $('body').css('overflow','hidden');
     });
 
