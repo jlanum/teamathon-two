@@ -28,107 +28,107 @@
         </div> -->
     </div><!--/tab-content-->
 
-<div class="pages page-about" id="page-about">
-    <div class="container">
+    <div class="pages page-about" id="page-about">
+        <div class="container">
 
-        <header>
-            <h4 class="line-divider">Your Trips</h4>
-            <p>Hover over your trips to <span>start a conversation</span> with fellow travelers<br />that are staying at the same location.</p>
-        </header>
+            <header>
+                <h4 class="line-divider">Your Trips</h4>
+                <p>Hover over your trips to <span>start a conversation</span> with fellow travelers<br />that are staying at the same location.</p>
+            </header>
 
-        <div class="trip-item" ng-repeat="food in foods">
-            <article>
-                <ul class="thumbnails about-items my-thumbnails"><div class="about-overlay img-circle"></div></ul>
-                <ul class="thumbnails about-items">
+            <div class="trip-item" ng-repeat="food in foods">
+                <article>
+                    <ul class="thumbnails about-items my-thumbnails"><div class="about-overlay img-circle"></div></ul>
+                    <ul class="thumbnails about-items">
 
-                    <li class="span4 center trip-group">
-                        <div class="item">
-                            <img class="img-circle" src="{{food.attributes.photo._url}}" width="250" height="250"  />
-                            <div class="about-overlay img-circle about-extra"></div>
-                            <div class="about-overlay img-circle">
-                                <h3>Click to contact</h3>
-                                <div class="trip-info sicon-white">
-                                    <div class="trip-link" ng-repeat="parseuser in parseusers">
-                                        <span>{{parseuser.attributes.fbUserData.first_name}}</span>
-                                        <a href="#chatModal" id="chat-trigger" data-toggle="modal" role="button">
-                                        <img class="img-profile" ng-src="http://graph.facebook.com/{{parseuser.attributes.fbUserData.id}}/picture?type=square"/>
-                                        </a>
+                        <li class="span4 center trip-group">
+                            <div class="item">
+                                <img class="img-circle" src="{{food.attributes.photo._url}}" width="250" height="250"  />
+                                <div class="about-overlay img-circle about-extra"></div>
+                                <div class="about-overlay img-circle">
+                                    <h3>Click to contact</h3>
+                                    <div class="trip-info sicon-white">
+                                        <div class="trip-link" ng-repeat="parseuser in parseusers">
+                                            <span>{{parseuser.attributes.fbUserData.first_name}}</span>
+                                            <a href="#chatModal" id="chat-trigger" data-toggle="modal" role="button">
+                                            <img class="img-profile" ng-src="http://graph.facebook.com/{{parseuser.attributes.fbUserData.id}}/picture?type=square"/>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <h5>
-                            {{food.attributes.itineraryObj.HotelItineraryResponse.Itinerary.HotelConfirmation.Hotel.city}}<span>3 Travelers!</span>
-                            <br/><small>{{food.attributes.itineraryObj.HotelItineraryResponse.Itinerary.HotelConfirmation.Hotel.name}}
-                            <br />{{food.attributes.itineraryObj.HotelItineraryResponse.Itinerary.HotelConfirmation.arrivalDate}} - {{food.attributes.itineraryObj.HotelItineraryResponse.Itinerary.HotelConfirmation.departureDate}}</small>
-                        </h5>
-                    </li> 
-                </ul>
-            </article>
-        </div>
-    </div>
-</div>
-
-<ul class="thumbnails plugin-filter-elements left-space portfolio-items">
-    <div class="trip-link" ng-repeat="shoppingitem in shoppingitems">
-    <li class="span2 mix illustration branding">
-        <a target="_blank" href="{{shoppingitem.summary.producturl}}" data-destination="portfolio-items" data-insert="before">
-            <!-- Portfolio image -->
-            <img src="{{shoppingitem.image[0].imageurl}}">
-            
-            <!-- Portfolio name, activated on hover -->
-            <div class="portfolio-overlay">
-                <h4>{{shoppingitem.summary.name}}</h4>
+                            <h5>
+                                {{food.attributes.itineraryObj.HotelItineraryResponse.Itinerary.HotelConfirmation.Hotel.city}}<span>3 Travelers!</span>
+                                <br/><small>{{food.attributes.itineraryObj.HotelItineraryResponse.Itinerary.HotelConfirmation.Hotel.name}}
+                                <br />{{food.attributes.itineraryObj.HotelItineraryResponse.Itinerary.HotelConfirmation.arrivalDate}} - {{food.attributes.itineraryObj.HotelItineraryResponse.Itinerary.HotelConfirmation.departureDate}}</small>
+                            </h5>
+                        </li> 
+                    </ul>
+                </article>
             </div>
-        </a>
-    </li>
-</div>
-</ul>
-
-<div class="modal fade modal-wide" id="chatModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="widget-head">
-      <div class="pull-left">Chats</div>
-      <div class="widget-icons pull-right">
-        <a href="#" class="wclose"><i class="icon-remove"></i></a>
-      </div>  
-      <div class="clearfix"></div>
+        </div>
     </div>
 
-    <ul class="chats">
-      <li class="by-me"  ng-repeat="message in messages" cool-fade>
-        <div class="avatar pull-left">
-          <img ng-src="http://www.gravatar.com/avatar/{{message.email}}?s=60&r=R&d=https://www.guardly.com/commonassets/images/img_profile_placeholder.png" class="avatar avatar-60 photo" height="60" width="60"/>
+    <ul class="thumbnails plugin-filter-elements left-space portfolio-items">
+        <div class="trip-link" ng-repeat="shoppingitem in shoppingitems">
+            <li class="span2 mix illustration branding">
+                <a target="_blank" href="{{shoppingitem.summary.producturl}}" data-destination="portfolio-items" data-insert="before">
+                    <!-- Portfolio image -->
+                    <img src="{{shoppingitem.image[0].imageurl}}">
+                    
+                    <!-- Portfolio name, activated on hover -->
+                    <div class="portfolio-overlay">
+                        <h4>{{shoppingitem.summary.name}}</h4>
+                    </div>
+                </a>
+            </li>
         </div>
-        <div class="chat-content">
-          <div class="chat-meta">{{message.username}} said:</div>
-          {{message.text}}
-          <div class="clearfix"></div>
-        </div>
-      </li> 
-      <!-- <li class="by-other">
-        <div class="avatar pull-right">
-          <img src="img/user.jpg" alt=""/>
-        </div>
-
-        <div class="chat-content">
-          <div class="chat-meta">3 hours ago <span class="pull-right">Ravi</span></div>
-          Vivamus diam elit diam, consectetur fconsectetur dapibus adipiscing elit.
-          <div class="clearfix"></div>
-        </div>
-      </li>          -->                                                        
     </ul>
 
-    <div class="widget-foot">
-          
-          <form class="form-inline">
-            <div class="form-group">
-                <input placeholder="What's on your mind?" type="text" name="text" ng-model="message.text"/>
+    <div class="modal fade modal-wide" id="chatModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="widget-head">
+          <div class="pull-left">Chats</div>
+          <div class="widget-icons pull-right">
+            <a href="#" class="wclose"><i class="icon-remove"></i></a>
+          </div>  
+          <div class="clearfix"></div>
+        </div>
+
+        <ul class="chats">
+          <li class="by-me"  ng-repeat="message in messages" cool-fade>
+            <div class="avatar pull-left">
+              <img ng-src="http://www.gravatar.com/avatar/{{message.email}}?s=60&r=R&d=https://www.guardly.com/commonassets/images/img_profile_placeholder.png" class="avatar avatar-60 photo" height="60" width="60"/>
             </div>
-            <button type="submit" ng-click="publish()" class="btn btn-primary">Send</button>
-          </form>
-      </div>
-</div>
+            <div class="chat-content">
+              <div class="chat-meta">{{message.username}} said:</div>
+              {{message.text}}
+              <div class="clearfix"></div>
+            </div>
+          </li> 
+          <!-- <li class="by-other">
+            <div class="avatar pull-right">
+              <img src="img/user.jpg" alt=""/>
+            </div>
+
+            <div class="chat-content">
+              <div class="chat-meta">3 hours ago <span class="pull-right">Ravi</span></div>
+              Vivamus diam elit diam, consectetur fconsectetur dapibus adipiscing elit.
+              <div class="clearfix"></div>
+            </div>
+          </li>          -->                                                        
+        </ul>
+
+        <div class="widget-foot">
+              
+              <form class="form-inline">
+                <div class="form-group">
+                    <input placeholder="What's on your mind?" type="text" name="text" ng-model="message.text"/>
+                </div>
+                <button type="submit" ng-click="publish()" class="btn btn-primary">Send</button>
+              </form>
+          </div>
+    </div>
 
 </div><!--ng-controller-->
 

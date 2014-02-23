@@ -8,12 +8,21 @@ body{
     padding-top: 43px;
     background: #eee url('../images/pages/welcome/bg.png') 0 0 repeat !important;
 }
+#navigation li.active a:after{
+    border-radius: 4px !important;
+    background-color: #d94444 !important;
+}
 .macys{text-align: center;display: block;}
 .portfolio-items .mix {display:inline-block;opacity:1;}
 .portfolio-items h4 {font-size: 10px !important;}
 .left-space {margin-left: 14%;}
 
 #chatModal{
+    .widget-head{
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+    
     ul.chats{
         max-height: 300px;
         overflow-y: auto;
@@ -23,11 +32,6 @@ body{
             display: block;
         }
     }//end chats
-    
-    .widget-head{
-        padding: 10px;
-        border-bottom: 1px solid #ddd;
-    }
     
     form{
         padding: 25px 0 0 10px;
@@ -54,6 +58,23 @@ body{
     opacity: 1 !important;
     background-color: #333 !important;
     
+    a{
+        color: #f6f6f6 !important;
+        text-shadow: none !important;
+    }
+    #user-profile{
+        position: absolute;
+        color: white;
+        right: 225px;
+        top: 8px;
+        font-size: 15px;
+        
+        span{
+            color: #d94444;
+            font-weight: bold;
+        }
+    }//end user-profile
+    
     .social-icons{
         a{
             opacity: .9;
@@ -79,14 +100,9 @@ body{
             &.sicon-youtube{
                 background-color:#f00;
             }
-        }
-    }
-    
-    a{
-        color: #f6f6f6 !important;
-        text-shadow: none !important;
-    }
-    
+        }//end a
+    }//end social icons
+
     .center{
         position: relative;
         
@@ -116,12 +132,23 @@ body{
     }//end center
 }//end navigaiton
 
-#navigation li.active a:after{
-    border-radius: 4px !important;
-    background-color: #d94444 !important;
-}
+
 #page-welcome{
-    
+    h1 {
+        font-size:56px;
+    }
+    #user-profile{
+        display: none;
+    }
+    .line-divider{
+        margin-bottom: 25px;
+    }
+    .social-icons{
+        margin-bottom: 15px;
+    }
+    .btn-info{
+        margin-bottom: 10px;
+    }
    .appstore{
         background-color: #f6f6f6;
         border-radius: 18px;
@@ -137,17 +164,9 @@ body{
 }
 
 #page-about{
+    
     h4.line-divider{
         color: #333 !important;
-    }
-    header{
-        p{
-            margin: 0 0 -10px !important;
-            
-            span{
-                color: #d94444;
-            }
-        }
     }
     .about-overlay.img-circle h3{
         font-size: 13px;
@@ -158,6 +177,23 @@ body{
         border-bottom: 1px solid #f6f6f6;
         height: 41px;
     }
+    img.img-circle{
+        width: 297px;
+        height: 297px;
+        border: 1px solid #4e808e;
+        padding: 6px;
+    }   
+    
+    header{
+        p{
+            margin: 0 0 -10px !important;
+            
+            span{
+                color: #d94444;
+            }
+        }//end p
+    }//end header
+    
     .trip-item{
         display: inline-block;
         vertical-align: top;
@@ -167,22 +203,26 @@ body{
         &:last-child{
             margin: 0px !important;
         }
-    }
-    
-    img.img-circle{
-        width: 297px;
-        height: 297px;
-        border: 1px solid #4e808e;
-        padding: 6px;
-    }    
+    }//end trip-item
+     
     .about-items {
         .about-overlay{
             background-color: transparent; 
-        }
-        .about-overlay.about-extra{
+            
+            &.about-extra{
                 background-color: #000 !important;   
                 opacity: .4;
             }
+            .trip-info{
+                left: 28%;
+                margin-left: -85px;
+                margin-top: -15px;
+                position: absolute;
+                text-align: center;
+                top: 28%;
+                z-index: 6;
+            }
+        }//end about-overlay
        
         &.thumbnails > li{
            z-index: 1999; 
@@ -200,18 +240,10 @@ body{
                     margin: 0 0 0 5px;
                     vertical-align: text-bottom;
                 }
-            }
-        }
-    }
-    .about-items .about-overlay .trip-info{
-        left: 28%;
-        margin-left: -85px;
-        margin-top: -15px;
-        position: absolute;
-        text-align: center;
-        top: 28%;
-        z-index: 6;
-    }
+            }//end h5
+        }//end li
+    }//end about-items
+   
     .trip-link{
         background-color: #000;
         border-radius: 100px;
@@ -246,5 +278,5 @@ body{
             height: 98px;
             border-radius: 100px;
         }
-    }
-}
+    }//end trip-link
+}//end page-about
