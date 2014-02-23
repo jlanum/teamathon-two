@@ -7,6 +7,36 @@
 body{
     padding-top: 43px;
 }
+#chatModal{
+    ul.chats{
+        max-height: 300px;
+        overflow-y: auto;
+        padding: 10px;
+        
+        li{
+            display: block;
+        }
+    }//end chats
+    
+    form{
+        padding: 25px 0 0 10px;
+        border-top: 1px solid #ddd;
+        
+        > div, .btn{
+            display: inline-block;
+        }
+        input{
+            width: 440px;
+            margin: 0 15px 0 0;
+            padding: 5px 0 5px 5px;
+            
+            &:focus{
+                box-shadow: none;
+                outline: none;
+            }
+        }
+    }
+}
 
 #navigation{
     top: 0px !important;
@@ -59,9 +89,7 @@ body{
         }
     }
 }
-.modal{
-    z-index: -1 !important;    
-}
+
 #page-about{
     img.img-circle{
         width: 297px;
@@ -78,8 +106,9 @@ body{
                 opacity: .4;
             }
        
-        &.my-thumbnails{
-            
+        &.thumbnails > li{
+           z-index: 1999; 
+           position: relative;
         }
     }
     .about-items .about-overlay .trip-info{

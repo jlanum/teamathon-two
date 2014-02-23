@@ -27,12 +27,13 @@
             </div>
         </div> -->
     </div><!--/tab-content-->
+
 <div class="pages page-about" id="page-about">
     <div class="container">
 
         <header>
             <h4 class="line-divider">Your Trips</h4>
-            <p class="smallFontBy08">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua,consectetur adipisicing elit.</p>
+            <p class="smallFontBy08">Hover over your trips to start a conversation with fellow travelers.</p>
             <div class="row">
         </header>
 
@@ -69,203 +70,78 @@
 </div>
 
 
-<div class="modal fade modal-wide" id="chatModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                        &times;
-                    </button>
-                    <h4 class="modal-title" id="myModalLabel">Chat</h4>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <label>Message:</label>
-                        <input placeholder="What's on your mind?" type="text" name="text" ng-model="message.text"/>
-                        <button type="submit" ng-click="publish()" class="btn btn-primary">Send</button>
-                    </form>
-                    <!-- Message List -->
-                    <div id="messages" class="table-striped">
-                        <div class="message" ng-repeat="message in messages" cool-fade>
-                            <div class="avatar-frame">
-                                <img ng-src="http://www.gravatar.com/avatar/{{message.email}}?s=60&r=R&d=https://www.guardly.com/commonassets/images/img_profile_placeholder.png" class="avatar avatar-60 photo" height="60" width="60"/>
-                            </div>
-                            <p class="user">
-                                {{message.username}} said:
-                            </p>
-                            <p class="text">
-                                {{message.text}}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<!-- Widget -->
+<div class="widget">
+    <!-- Widget title -->
+    <div class="widget-head">
+      <div class="pull-left">Chats</div>
+      <div class="widget-icons pull-right">
+        <a href="#" class="wminimize"><i class="icon-chevron-up"></i></a> 
+        <a href="#" class="wclose"><i class="icon-remove"></i></a>
+      </div>  
+      <div class="clearfix"></div>
     </div>
 
-    <!-- Modal -->
-    <div class="modal fade modal-wide" id="recipeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                        &times;
-                    </button>
-                    <h4 class="modal-title" id="myModalLabel">Food recipe for {{matchingFoodFromPearson.name}}</h4>
-                </div>
-                <div class="modal-body">
-                    <ul class="nav nav-tabs recipe-tabs">
-                        <li class="active">
-                            <a href="#recipe" data-toggle="tab">Recipe</a>
-                        </li>
-                        <li>
-                            <a href="#savings" data-toggle="tab">Compare Prices</a>
-                        </li>
-                    </ul>
+    <div class="widget-content">
+      <!-- Widget content -->
+      <div class="padd">
+        
+        
 
-                    <!-- Tab panes -->
-                    <div class="tab-content">
-                        <div class="tab-pane active" id="recipe">
-                            <div class="recipe-detail">
-                                <span class="fa-stack fa-lg pull-left icon text-warning"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-fire fa-stack-1x fa-inverse"></i> </span>
-                                <h4>Cooking Method: <span>{{matchingFoodFromPearson.cooking_method}}</span></h4>
-                            </div>
+      </div>
+      <!-- Widget footer -->
+      
+    </div>
+</div> 
 
-                            <div class="recipe-detail">
-                                <span class="fa-stack fa-lg pull-left icon text-warning"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-lemon-o fa-stack-1x fa-inverse"></i> </span>
-                                <h4>Ingredients</h4>
-                                <ul>
-                                    <li ng-repeat="ingredient in matchingFoodFromPearson.ingredients">
-                                        {{ingredient}}
-                                    </li>
-                                </ul>
-                            </div>
 
-                            <div class="recipe-detail">
-                                <span class="fa-stack fa-lg pull-left icon text-warning"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-list-ol fa-stack-1x fa-inverse"></i> </span>
-                                <h4>Cooking steps:</h4>
-                                <ul class="steps">
-                                    <li ng-repeat="step in recipeForPearsonFood.directions">
-                                        {{step}}
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="tab-pane" id="savings">
-                            <div class="row compare-prices">
-                                <div class="col-md-6">
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">
-                                            <h3 class="panel-title">Dining Out</h3>
-                                        </div>
-                                        <div class="panel-body">
-                                            <div class="table-responsive">
-                                                <table class="table">
-                                                    <tr>
-                                                        <th>Item</th>
-                                                        <th>Quantity Slice(s)</th>
-                                                        <th>Price</th>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Cheesecake</td>
-                                                        <td>16</td>
-                                                        <td class="danger">$25</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td></td>
-                                                        <td>1</td>
-                                                        <td class="danger">$8</td>
-                                                    </tr>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">
-                                            <h3 class="panel-title">Homemade</h3>
-                                        </div>
-                                        <div class="panel-body">
-                                            <div class="table-responsive">
-                                                <table class="table">
-                                                    <tr>
-                                                        <th>Item</th>
-                                                        <th>Quantity Slice(s)</th>
-                                                        <th>Price</th>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Cheesecake</td>
-                                                        <td>16</td>
-                                                        <td class="success">$16.50</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td></td>
-                                                        <td>1</td>
-                                                        <td class="success">$1.31</td>
-                                                    </tr>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!--/row-->
-                            <div class="alert alert-info">
-                                <h4><i class="fa fa-money"></i> Cooking this dish yourself can save you $6.70</h4>
-                            </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <img src="assets/logo_kohls.jpg" class="img-thumbnail pull-right logo-retailer"/>
-                                    <strong>Items to consider when cooking this dish</strong>
-                                </div>
-                                <div class="panel-body">
-                                    <div class="row">
-                                        <div class="col-sm-6 col-md-4" ng-repeat="relatedProductWalmart in relatedProductsWallmart">
-                                            <div class="thumbnail">
-                                                <img src="{{relatedProductWalmart.thumbnailImage}}" class="img-responsive" alt="stand-mixer">
-                                                <div class="caption">
-                                                    <h5 class="product-title">{{relatedProductWalmart.name}}</h5>
-                                                    <p class="short">
-                                                        {{relatedProductWalmart.longDescription}}
-                                                    </p>
-                                                    <p class="long">
-                                                        {{relatedProductWalmart.longDescription}}
-                                                    </p>
-                                                    <hr>
-                                                    <p class="btn-buy pull-right">
-                                                        <a href="#" class="btn btn-primary" role="button">Buy</a>
-                                                    </p>
-                                                    <div ng-show="relatedProductWalmart.msrp" class="sale-price">
-                                                        <h3>${{relatedProductWalmart.msrp}}</h3>
-                                                    </div>
-                                                    <hr class="clear" />
-                                                </div>
-                                            </div>
-                                        </div>
+<div class="modal fade modal-wide" id="chatModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <ul class="chats">
 
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!--tab-content-->
+      <li class="by-me"  ng-repeat="message in messages" cool-fade>
+        <div class="avatar pull-left">
+          <img ng-src="http://www.gravatar.com/avatar/{{message.email}}?s=60&r=R&d=https://www.guardly.com/commonassets/images/img_profile_placeholder.png" class="avatar avatar-60 photo" height="60" width="60"/>
+        </div>
 
-                </div><!--/modal-body-->
+        <div class="chat-content">
+          <div class="chat-meta">{{message.username}} said: <span class="pull-right">3 hours ago</span></div>
+          {{message.text}}
+          <div class="clearfix"></div>
+        </div>
+      </li> 
 
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">
-                        Close
-                    </button>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
+      <!-- <li class="by-other">
+        <div class="avatar pull-right">
+          <img src="img/user.jpg" alt=""/>
+        </div>
+
+        <div class="chat-content">
+          <div class="chat-meta">3 hours ago <span class="pull-right">Ravi</span></div>
+          Vivamus diam elit diam, consectetur fconsectetur dapibus adipiscing elit.
+          <div class="clearfix"></div>
+        </div>
+      </li>          -->                                                        
+    </ul>
+
+    <div class="widget-foot">
+          
+          <form class="form-inline">
+            <div class="form-group">
+                <input placeholder="What's on your mind?" type="text" name="text" ng-model="message.text"/>
+            </div>
+            <button type="submit" ng-click="publish()" class="btn btn-primary">Send</button>
+          </form>
+      </div>
+</div>
+
 </div><!--ng-controller-->
 
 <script type="text/javascript">
-    
-    // $(document).on('click','#chat-trigger',function(){
-    //     console.log('here');
+    $(document).on('click','#chat-trigger',function(){
+        var myParent = $(this).parents('li'),
+            theNav = $('#navigation');
 
-    //     $('.modal').css('z-index',10401);
-    // });
+        $(myParent).css('z-index',1030);
+        $(theNav).css('z-index',1031);
+    });
 </script>
