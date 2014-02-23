@@ -27,12 +27,25 @@ function($scope, Facebook) {
         }
     });
 
- 
-
     $scope.getAllParseUsers = function(){
         Facebook.getAllParseUsers();
     };
    $scope.getAllParseUsers();
+   
+   $scope.$on('get-all-shoppingitems-onsuccess', function(event, response) {
+        console.log(response[0].attributes.resultObj.searchresultgroups[0].products.product);
+        $scope.shoppingitems = response[0].attributes.resultObj.searchresultgroups[0].products.product;
+        if (!$scope.$$phase) {
+            $scope.$apply();
+        }
+    });
+
+    $scope.getShoppingItems = function(searchTerm){
+        Facebook.getShoppingItems(searchTerm);
+    };
+    $scope.getShoppingItems();
+   
+   
     $scope.getFoodTime = function(d1) {
         return jQuery.timeago(d1);
     };
@@ -43,7 +56,7 @@ function($scope, Facebook) {
     $scope.limit = 20;
 
     //publish a chat message
-    $scope.publish = function(){
+    $scope.publish = function(channelId){
         
         //toggle the progress bar
         $('#progress_bar').slideToggle();

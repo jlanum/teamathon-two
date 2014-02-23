@@ -1,9 +1,12 @@
-SporkitServiceModule.service('Facebook', function($rootScope) {
+SporkitServiceModule.service('Facebook', ['$rootScope', '$http', function($rootScope, $http) {
     var Food = Parse.Object.extend("Trip");
     var foodQuery = new Parse.Query(Food);
 
     var ParseUser = Parse.Object.extend("User");
     var parseUserQuery = new Parse.Query(ParseUser);
+
+    var ShoppingSearchResult = Parse.Object.extend("ShoppingSearchResult");
+    var shoppingSearchResultQuery = new Parse.Query(ShoppingSearchResult);
 
     var createResponse = function(id, response) {
         if (response) {
@@ -39,6 +42,12 @@ SporkitServiceModule.service('Facebook', function($rootScope) {
         getAllParseUsers : function(user) {
             parseUserQuery.find(function(response) {
                 createResponse('get-all-parseusers', response);
+            });
+        },
+        getShoppingItems: function(searchTerm){
+            shoppingSearchResultQuery.equalTo("searchString", searchTerm);
+            shoppingSearchResultQuery.find(function(response) {
+                createResponse('get-all-shoppingitems', response);
             });
         },
         getLoginStatus : function() {
@@ -173,5 +182,5 @@ SporkitServiceModule.service('Facebook', function($rootScope) {
         }
     };
     return promise;
-});
+}]);
 
