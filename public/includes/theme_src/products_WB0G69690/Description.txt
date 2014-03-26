@@ -1,0 +1,86 @@
+![Bootstrap Admin Theme](https://dl.dropbox.com/u/13873847/macwrap/sale.jpg)
+
+![Bootstrap E Commerce Theme](https://dl.dropbox.com/u/13873847/macwrap/banner.jpg)
+
+![Bootstrap Responsive Admin Theme](https://dl.dropbox.com/u/13873847/macwrap/admin.jpg)
+
+MacBeath is a family of themes which includes **MacBeath** (Front end theme), **MacKart** (E-Commerce @ Shopping cart theme), **MacAdmin** (Admin theme). It has more than **70+ pages and comes in 6 Cool colors**. Take a look at full list of features below. 
+
+###Font End Features:
+
+ 1. 3 Cool sliders.
+ 2. Fully Responsive.
+ 3. 3 Home page layouts.
+ 4. 4 Blog layouts.
+ 5. More than 40 pages.
+ 6. 6 cool colors.
+ 7. Responsive refine slider for recent post.
+ 8. Flex slider for images, testimonials and about section.
+ 9. Black and White photo effect.
+ 10. Gallery with isotope effect.
+ 11. Filter script for Support page.
+ 12. Cool resume page.
+ 13. Login and Register forms.
+ 14. Coming soon section with twitter feed.
+ 15. Twitter script, Google web fonts and font awesome icons.
+ 16. It supports almost all features of twitter bootstrap. 
+
+###E-Commerce Features:
+
+ 1. Flex Slider.
+ 2. 6 Colors & 18 Pages.
+ 3. Blog page.
+ 4. Responsive recent item slider.
+ 5. Colorful promo box.
+ 6. Cool sidebar navigation.
+ 7. Review section.
+ 8. Support page (filtering effect).
+ 9. Login and Register page (2 styles).
+ 10. Complete account pages (wish list, order summary, profile edit, etc.,).
+ 11. Checkout page and view cart page. 
+
+###Admin Features:
+
+ 1. Cool charts and graphs.
+ 2. Sidebar navigation with dropdown menu. 
+ 3. Lots of Cool widgets.
+ 4. Calendar support.
+ 5. Colorful sliders. 
+ 6. Login, Register and Support page. 
+ 7. Lots of UI Tools.
+ 8. Table support. .
+ 9. Professional and Clean User Interface. 
+ 10. More than 10 html files. 
+
+-------------------------
+
+**Changelog:**
+
+**Version 3.0**
+ 
+ - Admin theme added.
+
+**Version 2.1**
+
+ - Comments updated.
+ - FlexSlider fix.
+
+**Version 2.0:**
+
+ - Added E-Commerce Theme.
+
+**Version 1.0:**
+
+ - Initial Release.
+
+--------------------------
+
+**Credits:**
+
+- http://medialoot.com/item/free-designer-portfolio-icon-set/
+- http://pdphoto.org
+- http://www.sxc.hu/profile/Ayla87
+- http://www.sxc.hu/profile/linder6580
+- http://www.sxc.hu/profile/Thoursie
+- http://www.sxc.hu/profile/jvictor
+- http://vandelaydesign.com/blog/web-development/vertical-accordion/
